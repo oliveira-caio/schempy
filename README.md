@@ -1,2 +1,4 @@
 # schempy
-toy interpreter for the scheme language written in python.
+toy interpreter for the Scheme language written in Python.
+
+the interpreter works like this: when you run your program using, eg, `python main.py`, it enter an infinite loop to simulate an interpreter. then, you type one-liners basic expressions in Scheme and the program will do the following, in that order: get the tokens using Python's `split` function, then it constructs a syntax tree of the expression to see the order of execution, and to conclude it evaluates the expression. the first two steps are called __parsing__. this interpreter also has [tail-call recursion](https://en.wikipedia.org/wiki/Tail_call) implemented in a very sketchy way with an infinite loop inside the evaluate function. the available tools of the interpreter are described inside the evaluate __docstring__, but you can basically declare and mutate variables (only integers and floats), use `if` statements and declare and call functions/procedures. this interpreter is based on the two posts by Peter Norvig: [this](http://norvig.com/lispy.html) and [this](http://norvig.com/lispy2.html).
